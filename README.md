@@ -18,5 +18,7 @@ More so, I created the API Model class with the dio package to easily retrieve d
 
 The weatherapp api consists of nested json objects when retrieving data from the forecast endpoint. All data were displayed accordingly using json annotation and json serializable packages.
 
-I used codemagic.io for CI/CD to automate deployment and also for unit, integration and widget testing
+I used codemagic.io for CI/CD to automate deployment and also for unit, integration and widget testing.
+
+You can clone this weather app:  https://github.com/obicollins274/weatherapp.git
 
