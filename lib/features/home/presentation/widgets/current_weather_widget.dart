@@ -8,6 +8,8 @@ import '../bloc/weather_cubit.dart';
 class CurrentWeather extends StatelessWidget {
   final bloc = WeatherCubit();
 
+  CurrentWeather({super.key});
+
   @override
   Widget build(BuildContext context) {
     bloc.getCurrentWeather();
@@ -23,13 +25,13 @@ class CurrentWeather extends StatelessWidget {
           return Column(children: [
             WeatherTheme(),
             Container(
-                padding: EdgeInsets.fromLTRB(7.5, 10, 7.5, 10),
-                decoration: BoxDecoration(
+                padding: const EdgeInsets.fromLTRB(7.5, 10, 7.5, 10),
+                decoration: const BoxDecoration(
                   color: DVTBlue,
                 ),
                 width: MediaQuery.of(context).size.width,
                 child: Column(children: [
-                  SizedBox(height: 10),
+                  const SizedBox(height: 10),
                   SizedBox(
                       height: 60,
                       child: Column(
@@ -51,7 +53,7 @@ class CurrentWeather extends StatelessWidget {
                                       ),
                                   textAlign: TextAlign.center,
                                 ),
-                                Spacer(),
+                                const Spacer(),
                                 Text(
                                   "${state.weather!.main!.temp?.toStringAsFixed(0)}°\n Current",
                                   style: Theme.of(context)
@@ -62,7 +64,7 @@ class CurrentWeather extends StatelessWidget {
                                       ),
                                   textAlign: TextAlign.center,
                                 ),
-                                Spacer(),
+                                const Spacer(),
                                 Text(
                                     "${state.weather!.main!.temp_max?.toStringAsFixed(0)}° \n Max",
                                     style: Theme.of(context)
@@ -78,7 +80,7 @@ class CurrentWeather extends StatelessWidget {
                         ],
                       )),
                 ])),
-            Divider(
+            const Divider(
               height: 5,
               color: Colors.white,
             ),

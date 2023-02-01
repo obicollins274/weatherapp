@@ -160,6 +160,7 @@ class GenericAPIModelList<T> with APIModel {
   String? cursorPrevious;
   late final T Function(dynamic) serializeFromJson;
   late final dynamic Function(T) serializeToJson;
+  @override
   String? host;
 
   GenericAPIModelList({this.host}) {
@@ -199,10 +200,8 @@ class GenericAPIModelList<T> with APIModel {
     if (resp.data.isEmpty) return data;
     handleStatusCode(resp);
 
-    // final body = utf8.decode(resp.data);
-    List json;
     if (paginated) {
-      json = _parsePaginatedBody(resp.data);
+      _parsePaginatedBody(resp.data);
     }
     return data;
   }

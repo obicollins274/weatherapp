@@ -26,7 +26,7 @@ class _WelcomePageState extends State<WelcomePage> {
     if (permission == LocationPermission.denied) {
       return Future.error('Location permission is denied.');
     } else {
-      context.router.push(HomeRoute());
+      context.router.push(const HomeRoute());
     }
   }
 
@@ -40,7 +40,7 @@ class _WelcomePageState extends State<WelcomePage> {
   Widget build(BuildContext context) {
     return Container(
         color: DVTBlue,
-        child: Center(
+        child: const Center(
           child: CircularProgressIndicator(
             valueColor: AlwaysStoppedAnimation<Color>(Colors.white),
           ),

@@ -34,8 +34,8 @@ void main() {
       act: (WeatherForecastCubit cubit) async =>
           await cubit.getForecastWeather(),
       expect: () => [
-        WeatherForecastCubitState(status: WeatherForecastCubitStatus.fetching),
-        WeatherForecastCubitState(
+        const WeatherForecastCubitState(status: WeatherForecastCubitStatus.fetching),
+        const WeatherForecastCubitState(
           status: WeatherForecastCubitStatus.failed,
         ),
       ],
@@ -53,8 +53,8 @@ void main() {
       act: (WeatherForecastCubit cubit) async =>
           await cubit.getForecastWeather(),
       expect: () => [
-        WeatherForecastCubitState(status: WeatherForecastCubitStatus.fetching),
-        WeatherForecastCubitState(
+        const WeatherForecastCubitState(status: WeatherForecastCubitStatus.fetching),
+        const WeatherForecastCubitState(
           status: WeatherForecastCubitStatus.success,
         ),
       ],

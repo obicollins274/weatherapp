@@ -5,6 +5,7 @@ import 'package:weapp/features/home/presentation/bloc/weather_forecast_cubit.dar
 
 class ForecastWeather extends StatelessWidget {
   final bloc = WeatherForecastCubit();
+  ForecastWeather({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,37 +25,32 @@ class ForecastWeather extends StatelessWidget {
             return Center(child: Text(state.submissionError.error!));
           }
           return Container(
-              padding: EdgeInsets.fromLTRB(5, 5, 5, 10),
-              decoration: BoxDecoration(
+              padding: const EdgeInsets.fromLTRB(5, 5, 5, 10),
+              decoration: const BoxDecoration(
                 color: Color(0xff4e92df),
               ),
               height: MediaQuery.of(context).size.height * 0.57,
               width: MediaQuery.of(context).size.width,
               child: ListView.builder(
-                  shrinkWrap: true,
                   itemCount: 5,
-                  padding: EdgeInsets.fromLTRB(5, 15, 5, 15),
+                  padding: const EdgeInsets.fromLTRB(5, 15, 5, 15),
                   itemBuilder: (context, index) {
                     final wfc = state.forecast![index];
                     DateTime dateTime = DateTime.now();
                     final today = dateTime.add(Duration(days: index + 1));
                     String nextdate = DateFormat('EEEE').format(today);
-                    return Container(
+                    return SizedBox(
                         width: MediaQuery.of(context).size.width,
                         child: Column(children: [
                           ListTile(
-                            isThreeLine: false,
-                            minLeadingWidth: 10,
+                            minLeadingWidth: 150,
                             leading: Text(
                               nextdate,
-                              style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 18,
-                                  fontWeight: FontWeight.w500),
+                              style: Theme.of(context).textTheme.bodyText1!,
                               textAlign: TextAlign.left,
                             ),
                             title: Align(
-                                alignment: Alignment.center,
+                                alignment: Alignment.centerLeft,
                                 child: SizedBox(
                                   height: 32,
                                   width: 32,
@@ -63,12 +59,9 @@ class ForecastWeather extends StatelessWidget {
                                 )),
                             trailing: Text(
                                 "${wfc.unit?.temp_max?.toStringAsFixed(0)}°",
-                                style: TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 18,
-                                    fontWeight: FontWeight.w500)),
+                                style: Theme.of(context).textTheme.bodyText1!),
                             dense: true,
-                            contentPadding: EdgeInsets.symmetric(
+                            contentPadding: const EdgeInsets.symmetric(
                                 horizontal: 5.0, vertical: 0.0),
                           ),
                         ]));

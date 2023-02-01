@@ -6,6 +6,7 @@ import '../bloc/weather_cubit.dart';
 
 class WeatherTheme extends StatelessWidget {
   final bloc = WeatherCubit();
+  WeatherTheme({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,7 @@ class WeatherTheme extends StatelessWidget {
             if (state.weather?.weather.main == 'Clear') {
               return Container(
                   height: MediaQuery.of(context).size.height * 0.43,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Sunny,
                     image: DecorationImage(
                         image: AssetImage("assets/images/sea_sunny.png"),
@@ -38,7 +39,7 @@ class WeatherTheme extends StatelessWidget {
             } else if (state.weather?.weather.main == 'Clouds') {
               return Container(
                   height: MediaQuery.of(context).size.height * 0.43,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Cloudy,
                     image: DecorationImage(
                         image: AssetImage("assets/images/sea_cloudy.png"),
@@ -56,7 +57,7 @@ class WeatherTheme extends StatelessWidget {
             } else if (state.weather?.weather.main == 'Rain') {
               return Container(
                   height: MediaQuery.of(context).size.height * 0.43,
-                  decoration: BoxDecoration(
+                  decoration: const BoxDecoration(
                     color: Rainy,
                     image: DecorationImage(
                         image: AssetImage("assets/images/sea_rainy.png"),
@@ -74,7 +75,7 @@ class WeatherTheme extends StatelessWidget {
             }
             return Container(
                 height: MediaQuery.of(context).size.height * 0.43,
-                decoration: BoxDecoration(
+                decoration: const BoxDecoration(
                   color: Sunny,
                   image: DecorationImage(
                       image: AssetImage("assets/images/sea_sunny.png"),
