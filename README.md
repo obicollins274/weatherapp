@@ -1,16 +1,20 @@
-# weapp
+# weatherapp
 
-A new Flutter project.
+A weather app for DVT assessment team.
 
-## Getting Started
+## About the Weather App.
 
-This project is a starting point for a Flutter application.
+This project is developed using the clean architecture with bloc for state management.
 
-A few resources to get you started if this is your first Flutter project:
+The Lib folder consists of two folders (core & Features) and a main.dart file.
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+The Core folder consist of the utils folder and a routes folder. The routes folder consist of the route file and an auto generated file. The auto_route package was used for managing routes in this application. The utils folder consist of files that can be accessed and utilised from existing and prospective app features.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The feature folder consist of named_feature folders. Using the clean architecture, I seperated the folders into data and presentation folders. The data folder consists of the model and repo folders. Each folder consists of model and repo files repsectively to manage the api data. The Presentation folder consists of three different folders ie pages, bloc and Widgets folders. Each folder consist of their respective files.
+
+More so, i created the API Model class with the dio package to easily retreive data and manage API exceptions. I used the geolocator plugin to retreive coordinates and other relevant packages.
+
+## conclusion
+
+The weatherapp api consists of nested json objects when retreiving data from the forecast endpoint. All data were displayed accordingly using json annotation and json serializeable packages.
+
